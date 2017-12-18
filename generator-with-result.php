@@ -21,7 +21,7 @@ while($count!=0)
 }
 
 $res = json_encode($res);
-file_put_contents('datatoflume.txt', $res);
+//file_put_contents('datatoflume.txt', $res);
 
 file_put_contents('datatoflume.json', $res);
 filetotest($res);
@@ -57,11 +57,12 @@ function filetotest($resourse)
 	foreach($rnd_passport as $resrnd)
 	{
 
-		if(!isset($res_data[$resrnd]))
+		/*if(!isset($res_data[$resrnd]))
 		{
 			//$result_file.="|".str_pad($resrnd,6,' ', STR_PAD_LEFT)."|".str_pad("0.0",8,' ', STR_PAD_LEFT)."|".str_pad("0.0",9,' ', STR_PAD_LEFT)."|\n";
 			
-		}else{
+		}else{*/
+		if(isset($res_data[$resrnd]))
 			$resitemdata = $res_data[$resrnd];
 			$countavg=0;
 			$salaryavg=0;
